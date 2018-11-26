@@ -1,5 +1,7 @@
 import React from 'react';
 
+import SelectedOp from './select';
+
 
 const Form = (props) => {
 	if(props.type !== 'dropdown') {
@@ -12,7 +14,11 @@ const Form = (props) => {
 	} else {
 		return (
 			<div className='input-field col s6'>
-				<h1>aqui va el selct</h1>
+				<SelectedOp 
+					selectedOption={props.selectedOption}
+					handleChange={props.handleChange}
+					options={props.options}
+				/>
 			</div>
 		);
 	}
