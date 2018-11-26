@@ -24,7 +24,7 @@ class App extends Component {
   };
 
   cardInfo = () => {
-    // console.log(this.state);
+    console.log(this.state);
     this.setState({
       styleCard:'block'
     })
