@@ -11,17 +11,17 @@ class App extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      value: 'pais'
+      selectedOption: ''
     };
   }
 
-  handleChange = (event) => {
-    this.setState({
-      value: event.target.value
-    });
+  handleChange = (selectedOption) => {
+    this.setState({ selectedOption });
+    console.log(`Option selected:`, selectedOption);
   }
 
   render() {
+    const { selectedOption } = this.state;
     // eslint-disable-next-line array-callback-return
     const form = config.questions.map((item, index) => {
       const result =[];
@@ -36,9 +36,12 @@ class App extends Component {
       ))
       for(let i = 0; i<fields.length; i++) {
         // console.log(`${title.length}-${index}-${i}`);
+        console.log(fields[i].options);
         result.push((
         <div key = {`${title.length}-${index}-${i}`} >
           <Form 
+            options = {fields[i].options}
+            selectedOption={selectedOption}
             handleChange={this.handleChange}
             value={this.state.value}
             name={fields[i].name}

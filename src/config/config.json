@@ -39,7 +39,14 @@
 					"name": "country",
 					"label": "Country",
 					"type": "dropdown",
-					"options": ["Canada", "USA"]
+					"options": [
+						{ "value": "Canada", 
+							"label": "Canada" },
+						{ "value": "USA", 
+							"label": "USA" },
+						{ "value": "México", 
+							"label": "México" }
+					]
 				}
 			]
 		}
