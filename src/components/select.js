@@ -3,11 +3,10 @@ import Select from 'react-select';
 
 
 const SelectedOp = (props) => {
-
 return (
     <Select
-    value='pais'
-    onChange={props.onChange}
+    value={props.value}
+    onChange={props.onChangeS}
     options={props.options}
     />
 );

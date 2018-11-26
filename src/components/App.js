@@ -6,66 +6,57 @@ import './App.css';
 // import config from '../config/config.json';
 
 import Form from './form';
-// import Title from './title';
-// import CardInfo from './card';
+import CardInfo from './card';
 
 class App extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      
-      inputs:[
-        {
-          first_name:'',
-          last_name:'',
-          email: '',
-          phone_number: '',
-          street_address: '',
-          post_code:'',
-        },  
-      ],
-      infoState: []
+      first_name:'',
+      last_name:'',
+      email: '',
+      phone_number: '',
+      street_address: '',
+      post_code:'',
+      selectedOption: '',
+      styleCard: 'none'
     };
   };
 
-  addInfo = (info) => {
-    console.log(info);
-    // this.setState({
-    //   infoState: [...this.state.infoState, info]
-    // });
+  cardInfo = () => {
+    // console.log(this.state);
+    this.setState({
+      styleCard:'block'
+    })
+
   }
 
-  onChangeSelct = (selectedOption) => {
-    const info = [selectedOption];
-    this.setState({ 
-      infoState: this.state.infoState.concat(info)
+  handleChange = (selectedOption) => {
+    this.setState({ selectedOption });
+    // console.log(`Option selected:`, selectedOption);
+  }
+
+  onChangeInput = (value, name) => {
+    this.setState({
+      [name]:value
     });
   };
 
-  onChangeInput = (value, name) => {
-    console.log(value, name);
-    let valueState = '';
-    valueState = valueState + value;
-    // const info = {
-    //   name,
-    //   value
-    // }
-    // this.setState({
-    //   infoState:this.state.infoState.concat(info)
-    // });
-    console.log(valueState);
-  };
-
   render() {
-    const { inputs } = this.state;
+    const  inputs  = this.state;
+    const { selectedOption, styleCard } = this.state
     return (
       <div className='App'>
         <Form
           inputs={inputs}
-
-          addInfo={this.addInfo}
-          onChangeS={this.onChangeSelect}
+          valueSelect={selectedOption}
+          cardInfo={this.cardInfo}
           onChangeI={this.onChangeInput}
+          onChangeS={this.handleChange}
+        />
+        <CardInfo
+          style={styleCard}
+          infoState={inputs}
         />
       </div>
     );

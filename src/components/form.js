@@ -15,17 +15,12 @@ class Form extends Component {
 	};
 
 	onChangeI = (e) =>{
-		// console.log(`${e.target.name}, ${e.target.value}`);
 		this.props.onChangeI(e.target.value, e.target.name);
 	}
 
-	onChangeSelec = (selectedOption) => {
-    const arrInfo = [selectedOption]; 
-    this.props.onChangeS(arrInfo)
-	};
-
 	onSubmit = (e) => {
 		e.preventDefault();
+		this.props.cardInfo();
 	}
 	
 	render() {
@@ -41,14 +36,14 @@ class Form extends Component {
         </div>
       ))
       for(let i = 0; i<fields.length; i++) {
+				const nameJ = fields[i].name;
+				// console.log( this.props.inputs[nameJ]);
 				if(fields[i].type !== 'dropdown') {
-					const nameJ = fields[i].name;
-					// console.log( this.props.inputs[0][nameJ]);
 					result.push((
 					<div key = {`${title.length}-${index}-${i}`} className='input-field col s6' >
 						<input 
 							onChange={this.onChangeI}
-							value={this.props.inputs[0][nameJ]}
+							value={this.props.inputs[nameJ]}
 							name={fields[i].name} 
 							type={fields[i].type}
 							id='autocomplete-input' 
@@ -60,8 +55,9 @@ class Form extends Component {
 						result.push((
 							<div className='input-field col s6'>
 								<SelectedOp 
+									value={this.props.valueSelect}
 									options={fields[i].options}
-									onChange={this.onChangeSelec}
+									onChangeS={this.props.onChangeS}
 								/>
 							</div>
 						));
