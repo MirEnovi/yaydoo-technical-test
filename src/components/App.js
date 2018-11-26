@@ -8,22 +8,39 @@ import Form from './form';
 import Title from './title';
 
 class App extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      value: 'pais'
+    };
+  }
+
+  handleChange = (event) => {
+    this.setState({
+      value: event.target.value
+    });
+  }
+
   render() {
     // eslint-disable-next-line array-callback-return
-    const titleComponent = config.questions.map((item, index)=>{
-      return (
-        <Title
-          key={`${item.title}-${index}`}
-          title={item.title}/>
-      )
-    })
     const form = config.questions.map((item, index) => {
       const result =[];
       const title=item.title;
       const fields = item.fields;
+      result.push((
+        <div key={`${title.length}-${index}`}>
+          <Title
+            title={title}
+          />
+        </div>
+      ))
       for(let i = 0; i<fields.length; i++) {
-        result.push((<div key = {`${title}-${index}`}>
+        // console.log(`${title.length}-${index}-${i}`);
+        result.push((
+        <div key = {`${title.length}-${index}-${i}`} >
           <Form 
+            handleChange={this.handleChange}
+            value={this.state.value}
             name={fields[i].name}
             type={fields[i].type}
             label={fields[i].label}/>
@@ -34,14 +51,12 @@ class App extends Component {
     });
     return (
       <div className="App">
-        {titleComponent}
-        <div className="row">
+        {/* {titleComponent} */}
+        <form className="row">
           <div className="col s12">
-            <div className="row">
-              {form}
-            </div>
+            {form}
           </div>
-        </div> 
+        </form> 
       </div>
     );
   }
