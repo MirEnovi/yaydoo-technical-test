@@ -34,18 +34,24 @@
 					"name": "post_code",
 					"label": "Post Code",
 					"type": "text"
+
 				},
 				{
 					"name": "country",
 					"label": "Country",
 					"type": "dropdown",
-					"options": [
-						{ "value": "Canada", 
-							"label": "Canada" },
-						{ "value": "USA", 
-							"label": "USA" },
-						{ "value": "México", 
-							"label": "México" }
+					"options": [{
+							"value": "Canada",
+							"label": "Canada"
+						},
+						{
+							"value": "USA",
+							"label": "USA"
+						},
+						{
+							"value": "México",
+							"label": "México"
+						}
 					]
 				}
 			]

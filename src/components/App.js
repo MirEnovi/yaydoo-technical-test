@@ -1,82 +1,72 @@
+/* eslint-disable array-callback-return */
 import React, { Component } from 'react';
 
 import './App.css';
 
-import config from '../config/config.json';
+// import config from '../config/config.json';
 
 import Form from './form';
-import Title from './title';
+// import Title from './title';
+// import CardInfo from './card';
 
 class App extends Component {
   constructor(props) {
     super(props);
     this.state = {
+      
+      inputs:[
+        {
+          first_name:'',
+          last_name:'',
+          email: '',
+          phone_number: '',
+          street_address: '',
+          post_code:'',
+        },  
+      ],
       infoState: []
     };
-  }
+  };
 
-    
-  onInputChange = (info) => {
+  addInfo = (info) => {
     console.log(info);
-    this.setState({
-      infoState: this.state.infoState.concat(info)
-    })
+    // this.setState({
+    //   infoState: [...this.state.infoState, info]
+    // });
   }
 
-  onChangeSelec = (selectedOption) => {
-    console.log(selectedOption);
-    const arrInfo = [selectedOption] 
+  onChangeSelct = (selectedOption) => {
+    const info = [selectedOption];
     this.setState({ 
-      infoState: this.state.infoState.concat(arrInfo)
+      infoState: this.state.infoState.concat(info)
     });
-  }
+  };
 
-  onSubmit =(e) => {
-		e.preventDefault();
-    console.log(this.state);
-	}
+  onChangeInput = (value, name) => {
+    console.log(value, name);
+    let valueState = '';
+    valueState = valueState + value;
+    // const info = {
+    //   name,
+    //   value
+    // }
+    // this.setState({
+    //   infoState:this.state.infoState.concat(info)
+    // });
+    console.log(valueState);
+  };
 
   render() {
-    
-    // eslint-disable-next-line array-callback-return
-    const form = config.questions.map((item, index) => {
-      const result =[];
-      const title=item.title;
-      const fields = item.fields;
-      result.push((
-        <div key={`${title.length}-${index}`}>
-          <Title
-            title={title}
-          />
-        </div>
-      ))
-      for(let i = 0; i<fields.length; i++) {
-        result.push((
-        <div key = {`${title.length}-${index}-${i}`} >
-          <Form 
-            onChangeSelec={this.onChangeSelec}
-            onInputChange={this.onInputChange}
-            options = {fields[i].options}
-            value={this.state.value}
-            name={fields[i].name}
-            type={fields[i].type}
-            label={fields[i].label}/>
-          </div>));
-        }
-        return result;
-    });
-
-
+    const { inputs } = this.state;
     return (
       <div className='App'>
-        <form className='row' onSubmit={this.onSubmit}>
-          <div className='col s12'>
-            {form}
-          </div>
-          <button className='btn-large waves-effect waves-light  green lighten-1' type='submit' name='action'>Submit
-            <i className='material-icons right'>send</i>
-          </button>
-        </form> 
+        <Form
+          inputs={inputs}
+
+          addInfo={this.addInfo}
+          onChangeS={this.onChangeSelect}
+          onChangeI={this.onChangeInput}
+        />
       </div>
     );
   }
