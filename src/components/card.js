@@ -1,13 +1,23 @@
 import React from 'react';
 
-const Card = (props) => {
+const CardInfo = (props) => {
+	console.log(props.information.infoState);
+	const cardInfo = props.information.infoState;
 	return (
 		<div className='row'>
-			<div className='col s12 m6'>
-				<div className='card blue-grey darken-1'>
-					<div className='card-content white-text'>
-						<span className='card-title'>Card Title</span>
-						<p></p>
+			<div className='col s12 m12'>
+				<div className='card blue lighten-5'>
+					<div className='card-content  blue-grey-text text-darken-2'>
+						<h4>Valida tu Información</h4>
+						<div className='left-align'>
+							<p>FirstName: {cardInfo[0]} </p>
+							<p>LastName: {cardInfo[1]} </p>
+							<p>Country: </p>
+							<p>Email:  </p>
+							<p>PhoneNumber: {cardInfo[2]}</p>
+							<p>PostCode: </p>
+							<p>StreetAddress: {cardInfo[3]}</p>
+						</div>
 					</div>
 					{/* <div className='card-action'>
 						<a href='#'>This is a link</a>
@@ -17,4 +27,6 @@ const Card = (props) => {
 			</div>
 		</div>
 	);
-}
+};
+
+export default CardInfo;
