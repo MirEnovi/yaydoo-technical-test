@@ -4,19 +4,19 @@ self.__precacheManifest = [
     "url": "/yaydoo-technical-test/static/js/runtime~main.c7b93e89.js"
   },
   {
-    "revision": "c6f82a9769dbd4a2823a",
-    "url": "/yaydoo-technical-test/static/js/main.c6f82a97.chunk.js"
+    "revision": "ca5ea10c39a3a2a7f8b1",
+    "url": "/yaydoo-technical-test/static/js/main.ca5ea10c.chunk.js"
   },
   {
     "revision": "bf2d07f8e371447e27a6",
     "url": "/yaydoo-technical-test/static/js/1.bf2d07f8.chunk.js"
   },
   {
-    "revision": "c6f82a9769dbd4a2823a",
+    "revision": "ca5ea10c39a3a2a7f8b1",
     "url": "/yaydoo-technical-test/static/css/main.0b9166b6.chunk.css"
   },
   {
-    "revision": "6417809b373c3c5491dfd37793052416",
+    "revision": "9c947405f7e4054c2814f51583be086e",
     "url": "/yaydoo-technical-test/index.html"
   }
 ];
