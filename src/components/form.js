@@ -4,10 +4,20 @@ import SelectedOp from './select';
 
 
 const Form = (props) => {
+	const onChange = (e) => {
+		const arrInfo = [e.target.value];
+		props.onInputChange(arrInfo)
+	}
 	if(props.type !== 'dropdown') {
 		return (
 			<div className='input-field col s6'>
-				<input name={props.name} type={props.type} id='autocomplete-input' className='autocomplete'/>
+				<input 
+					name={props.name} 
+					type={props.type}
+					onChange={onChange} 
+					id='autocomplete-input' 
+					className='autocomplete' 
+				/>
 				<label htmlFor='autocomplete-input'>{props.label}</label>
 			</div>
 		);
@@ -15,9 +25,8 @@ const Form = (props) => {
 		return (
 			<div className='input-field col s6'>
 				<SelectedOp 
-					selectedOption={props.selectedOption}
-					handleChange={props.handleChange}
 					options={props.options}
+					onChange={props.onChangeSelec}
 				/>
 			</div>
 		);
