@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/3.6.3/workbox-sw.js");
 
 importScripts(
-  "/yaydoo-technical-test/precache-manifest.ddc4493ecbea5cdf6e0548d9c4fa7a5a.js"
+  "/yaydoo-technical-test/precache-manifest.cb845518cd28515a01c983d6ca7b4747.js"
 );
 
 workbox.clientsClaim();
