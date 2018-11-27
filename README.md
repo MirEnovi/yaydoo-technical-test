@@ -3,7 +3,7 @@
 # Formulario
 
 ## Descripción y contexto
----
+
 Este es un ejemplo de formulario simple para una página web que toma su estructura de una configuración JSON local.
 El ejemplo conserva los datos en el estado local.
 
@@ -28,14 +28,14 @@ streetAddress: "123 Evergreen Drive".
 
 
 ## Guía de usuario
----
+
 La aplicación esta deployada [aquí](https://mirenovi.github.io/yaydoo-technical-test/), y también se puede probar de manera local.
 
 Puedes folkear este repositorio si quieres trabajar con él.
 
 
 ## Guía de instalación
----
+
 Para probar de manera local es necesario contar con:
 - [NodeJS](https://nodejs.org/es/).
 - y tu package manager preferido. En este proyecto se uso NPM.
@@ -55,7 +55,7 @@ Guía de instalación:
 Y listo.
 
 ### Dependencias
----
+
 Para este proyecto se uso:
 - [React](https://jedwatson.github.io/react-select/).
 - [NodeJS](https://nodejs.org/es/).
@@ -66,5 +66,5 @@ Para este proyecto se uso:
 
 
 ## Versión
----
+
 ### Release V2.1.0
