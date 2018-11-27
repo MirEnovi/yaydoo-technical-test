@@ -67,4 +67,4 @@ Para este proyecto se uso:
 
 ## Versión
 
-### Release V2.1.0
+### Release V2.1.1
