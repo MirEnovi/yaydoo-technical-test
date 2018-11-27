@@ -38,7 +38,7 @@ class Form extends Component {
       for(let i = 0; i<fields.length; i++) {
 				const nameJ = fields[i].name;
 				// console.log( this.props.inputs[nameJ]);
-				console.log(`${title.length}-${index}-${i}`);
+				// console.log(`${title.length}-${index}-${i}`);
 				if(fields[i].type !== 'dropdown') {
 					result.push((
 					<div key = {`${title.length}-${index}-${i}`} className='input-field col s6' >
